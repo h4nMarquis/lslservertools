@@ -34,3 +34,17 @@ At present there is no way to include an LSL script in another one, so it is
 really impossibile to remove all redundancies and lslservertools has a bit
 of uneliminable overhead. Told that, lslservertools use is able to highly
 improve LSL scripts maintainability.
+
+Branch Unstable Information:
+
+This is the unstable branch and it is the main development branch.
+The code in this branch (unstable) will CHANGE without any advice and for
+any reason, like:
+1) New ideas.
+2) Adding new functionality.
+3) Refactoring.
+4) Bugfixes.
+This branch is for ONLY experimental code and development, the code in this
+branch (unstable) could change often and a lot so, it should be better to not
+use this branch in production environments unless if you are not very aware of
+what you are doing.
