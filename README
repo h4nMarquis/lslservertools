@@ -34,3 +34,17 @@ At present there is no way to include an LSL script in another one, so it is
 really impossibile to remove all redundancies and lslservertools has a bit
 of uneliminable overhead. Told that, lslservertools use is able to highly
 improve LSL scripts maintainability.
+
+Branch Testing Information:
+
+This is the testing branch and it is the branch for the code that has reached
+the functional maturity, but it needs more deep and heavy testing before to
+move on toward stable branch.
+The code in this branch will NOT change to add functionality but it could
+change ONLY to refactor it or to apply bugfixes.
+This branch is for testing code, the code in this branch (testing) could change
+often and a lot, and above all it is NOT deeply and heavily tested, but its
+functionality is locked down, so even if it is not higly suggested to use it in
+production environment, you know that its interface and functionality will be
+ever the same, then its usage in testing environments is very encouraged and
+about production environment its usage is feasible.
