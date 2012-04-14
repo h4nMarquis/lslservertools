@@ -1,0 +1,36 @@
+lslservertools
+Copyright (C)2012 H4n Marquis
+contact email: h4n@h4n.hostei.com
+
+lslservertools is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+lslservertools is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+Software (Project) short description:
+
+lslservertools is a LSL library (lsl native framework) who adds functionality
+to LSL scripts in a "Software Engineering" friendly way.
+
+Historically and structurally LSL is not a "Software Engineering" friendly
+scripting language: if the scripter is not very aware of "Sofware Engineering"
+"good" designs, codestyle and principles and he is not very spurred on by them,
+the LSL scripts code becomes very quickly unmaintainable, leading to poor
+software quality.
+
+lslservertools, primarily, aims to improve LSL scripts maintainability,
+reducing drastically redundant code.
+
+At present there is no way to include an LSL script in another one, so it is
+really impossibile to remove all redundancies and lslservertools has a bit
+of uneliminable overhead. Told that, lslservertools use is able to highly
+improve LSL scripts maintainability.
