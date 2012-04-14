@@ -34,3 +34,16 @@ At present there is no way to include an LSL script in another one, so it is
 really impossibile to remove all redundancies and lslservertools has a bit
 of uneliminable overhead. Told that, lslservertools use is able to highly
 improve LSL scripts maintainability.
+
+Branch Stable Information:
+
+This is the stable branch and it is the branch of the already tested and
+stable software.
+The only development that is possible in this branch is related ONLY to
+apply bugfixes.
+The code in this branch (stable) will NOT change to add new functionality
+or to refactoring the code.
+This branch is for ONLY already DEEPLY and HEAVILY tested software and if
+some of the software is here it is very likely it will NOT change often,
+otherwise it means that software is in the wrong branch (that is:
+it was merged in stable branch too soon from testing branch).
