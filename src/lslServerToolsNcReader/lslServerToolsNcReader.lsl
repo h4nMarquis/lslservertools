@@ -1,27 +1,25 @@
-/*
-    myServerNcReaderV0001
-    Copyright (C) 2012 H4n Marquis
-    contact email: h4n@h4n.hostei.com
+//
+//	lslServerToolsNcReader.lsl
+//	Copyright (C)2012 H4n Marquis
+//	contact email: h4n@h4n.hostei.com
     
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+//	This program is free software: you can redistribute it and/or modify
+//	it under the terms of the GNU General Public License as published by
+//	the Free Software Foundation, either version 3 of the License, or
+//	(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+//	This program is distributed in the hope that it will be useful,
+//	but WITHOUT ANY WARRANTY; without even the implied warranty of
+//	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//	GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//	You should have received a copy of the GNU General Public License
+//	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Very short description:
-    This is a very simple script server tool of my new suite of script
-    server tools. This one reads a notecard who has to be in the same
-    inventory folder (I mean same prim inventory) where this script is.
-
-*/
+//	Very short description:
+//	This is a very simple script server tool of my new suite of script
+//	server tools. This one reads a notecard who has to be in the same
+//	inventory folder (I mean same prim inventory) where this script is.
 
 list getMessage(string s)
 {
