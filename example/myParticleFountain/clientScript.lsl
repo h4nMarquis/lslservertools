@@ -1,5 +1,5 @@
 /*
-    myClientParticleFountainScriptV0001
+    clientScript.lsl
     Copyright (C) 2012 H4n Marquis
     contact email: h4n@h4n.hostei.com
     
@@ -95,7 +95,7 @@ string composeMessage(integer src, integer dst, list payload, integer loopback)
 {
     string sRet = "";
     
-    if(((src != dst) || loopback) && (llGetListLength(payload) > 0))
+    if(((!(src & dst)) || loopback) && (llGetListLength(payload) > 0))
     {
         sRet = (string)src;
         sRet += "," + (string)dst;
@@ -110,18 +110,30 @@ string composeMessage(integer src, integer dst, list payload, integer loopback)
 
 myNcSetup(string ncLine)
 {
-    string msgToSend = composeMessage(myAddr,partAddr,[ncLine],0);
-    if(debug)
+    if(llToUpper(ncLine) == "DEBUG")
     {
-        llOwnerSay("Message to send \"" + msgToSend + "\"");
+        myDebugScript();
     }
-    llMessageLinked(LINK_ALL_OTHERS,partChan,msgToSend,"");
+    else
+    {
+        string msgToSend = composeMessage(myAddr,partAddr,[ncLine],0);
+        if(debug)
+        {
+            llOwnerSay("Message to send \"" + msgToSend + "\"");
+        }
+        llMessageLinked(LINK_ALL_OTHERS,partChan,msgToSend,"");
+    }
 }
 
 myResetScript()
 {
-    llMessageLinked(LINK_SET,0xFFFFFFFF,composeMessage(myAddr, 0xFFFFFFFF, ["RESET"],0),"");
+    llMessageLinked(LINK_SET,0xFFFFFFFF,composeMessage(myAddr, 0xFFFFFFFF, ["RESET"],1),"");
     llResetScript();
+}
+
+myDebugScript()
+{
+    llMessageLinked(LINK_SET,0xFFFFFFFF,composeMessage(myAddr, 0xFFFFFFFF, ["DEBUG"],1),"");
 }
 
 integer debug = 0;
@@ -149,7 +161,7 @@ default
         string msg = composeMessage(myAddr, ncReaderAddr, ["load", ncName],0);
         if(debug)
         {
-            llOwnerSay("Msg=\"" + msg + "\"");
+            llOwnerSay("Client Setup Msg=\"" + msg + "\"");
         }
         llMessageLinked(LINK_THIS,ncReaderChan,msg,"");
     }
@@ -167,7 +179,7 @@ default
             {
                 lTmp = getPayload(lTmp);
                 reply = llList2String(lTmp,0);
-                if (reply != "end")
+                if (llToUpper(reply) != "END")
                 {
                     if(debug)
                     {
@@ -183,6 +195,28 @@ default
                         llOwnerSay("End of notecard reached");
                     }
                     state on;
+                }
+            }
+            else if(sourceAddr == myAddr)
+            {
+                lTmp = getPayload(lTmp);
+                reply = llList2String(lTmp,0);
+                if (llToUpper(reply) == "DEBUG")
+                {
+                    debug = 1;
+                }
+                else if(llToUpper(reply) == "RESET")
+                {
+                    llResetScript();
+                }
+                else if(haltOnError)
+                {
+                    lastError = "State default, unexpected Messagge from \"" + (string)sourceAddr + "\"";
+                    if(debug)
+                    {
+                        llOwnerSay(lastError);
+                    }
+                    state halted;
                 }
             }
             else if(haltOnError)

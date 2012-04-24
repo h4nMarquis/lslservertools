@@ -99,7 +99,7 @@ string composeMessage(integer src, integer dst, list payload, integer loopback)
 {
     string sRet = "";
     
-    if(((src != dst) || loopback) && (llGetListLength(payload) > 0))
+    if(((!(src & dst)) || loopback) && (llGetListLength(payload) > 0))
     {
         sRet = (string)src;
         sRet += "," + (string)dst;

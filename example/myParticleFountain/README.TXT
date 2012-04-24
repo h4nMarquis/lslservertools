@@ -20,10 +20,10 @@ over the rezzed object, then Edit... from the pie menu.
 
 6a) Click unlick button
 
-6b) left shift + left click over the platform (myParticleFountain001 prim)
+6b) left shift + left click over the platform (myParticleFountain prim)
 
-6c) left shift + left click over the platform (myParticleFountain001 prim),
-this assures that myParticleFountain001 prim is the root prim. This is very
+6c) left shift + left click over the platform (myParticleFountain prim),
+this assures that myParticleFountain prim is the root prim. This is very
 important. You know who is the "root prim" because it is the only yellow
 outlined prim when all the object is selected in edit mode, other object
 prims are outlined in blue.
@@ -35,7 +35,7 @@ prim inventory.
 have checked the check button "Edit linked parts", if it is not already
 checked it is time to do it.
 
-9) left click over myParticleFountain001 (the platform) to select and edit it.
+9) left click over myParticleFountain (the platform) to select and edit it.
 
 10) left click on tab "Content" and start to drag and drop inside it:
 
@@ -43,27 +43,18 @@ checked it is time to do it.
 
 10b) notecard "BlueFountain"
 
-10c) script "myServerNcReaderV0001"
+10c) script "lslServerToolsNcReader"
 
-10d) script "myClientParticleFountainScriptV0001"
+10d) script "clientScript"
 
-11) left click over one of the myParticleEmitter001 (one of the cone) to
+11) for any other prim (not root one) left click over to
 select and edit it.
 
 12) left click on tab "Content" and start to drag and drop inside it:
 
 12a) notecard "COPYING"
 
-12b) script "myServerParticleScriptV0001"
-
-11) left click over the other myParticleEmitter001 (the other cone and last
-prim) to select and edit it.
-
-12) left click on tab "Content" and start to drag and drop inside it:
-
-12a) notecard "COPYING"
-
-12b) script "myServerParticleScriptV0001"
+12b) script "lslServerToolsParticle"
 
 13) nearly done!
 
@@ -78,6 +69,6 @@ menu.
 
 18) Rez again the object and watch it working!
 
-Touch it (touch the myParticleFountain001 the platform) to toggle on and off.
+Touch it (touch the myParticleFountain the platform) to toggle on and off.
 
 See you...
